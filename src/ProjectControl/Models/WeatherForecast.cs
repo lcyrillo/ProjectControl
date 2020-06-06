@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectControl
+namespace ProjectControl.Models
 {
     public class WeatherForecast
     {

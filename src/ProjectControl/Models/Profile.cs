@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectControl
+namespace ProjectControl.Models
 {
     public class Profile
     {
@@ -12,10 +12,12 @@ namespace ProjectControl
 
         public int CreatedBy { get; set; }
 
-        public int DeletedBy { get; set; }
+        public int? DeletedBy { get; set; }
 
         public DateTime InputDate { get; set; }
 
-        public DateTime DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
+
+        public int Status { get; set; }
     }
 }

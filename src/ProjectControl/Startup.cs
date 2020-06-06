@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using ProjectControl.Models;
+using ProjectControl.Context;
 
 namespace ProjectControl
 {
@@ -26,6 +29,14 @@ namespace ProjectControl
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<ContextDb>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("ProjectControl"))
+            );
+
+            services.AddScoped<ContextDb>();
+            
+            services.AddTransient<Profile>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

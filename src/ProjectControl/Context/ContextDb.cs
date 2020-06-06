@@ -1,5 +1,5 @@
-using Microsoft.EntityFramework;
-using Model;
+using Microsoft.EntityFrameworkCore;
+using ProjectControl.Models;
 
 namespace ProjectControl.Context
 {
@@ -9,3 +9,4 @@ namespace ProjectControl.Context
 
         public virtual DbSet<Profile> Profile { get; set; }
     }
+}
